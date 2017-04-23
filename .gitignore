@@ -5,3 +5,5 @@
 !polybar
 !polybar/*
 !compton.conf
+!fontconfig
+!fontconfig/*
