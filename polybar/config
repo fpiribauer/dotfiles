@@ -148,7 +148,7 @@ label-urgent-padding = 1
 type = internal/date
 interval = 5
 
-date = "%d/%m/%y"
+date = "%d.%m.%y"
 date-alt = " %d"
 
 time = " %H:%M:%S"
