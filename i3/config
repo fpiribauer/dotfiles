@@ -28,6 +28,9 @@ font pango:Noto Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+hide_edge_borders both
+new_window pixel 0
+new_float normal 1
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -194,5 +197,6 @@ bindsym $alt+Print exec scrot -u
 
 exec --no-startup-id $XDG_CONFIG_HOME/polybar/run_polybar.sh 
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc 
+exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap at
