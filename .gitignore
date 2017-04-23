@@ -2,3 +2,6 @@
 !.gitignore
 !i3
 !i3/*
+!polybar
+!polybar/*
+!compton.conf
