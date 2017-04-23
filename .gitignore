@@ -7,3 +7,7 @@
 !compton.conf
 !fontconfig
 !fontconfig/*
+!wallpapers
+!wallpapers/*
+!nitrogen
+!nitrogen/*
