@@ -203,7 +203,11 @@ exec --no-startup-id $XDG_CONFIG_HOME/polybar/run_polybar.sh
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc 
 exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id setxkbmap at
+exec --no-startup-id setxkbmap -layout us -option caps:escape
 exec --no-startup-id disable-standyb-fs
 exec --no-startup-id emacs --daemon
+
+#XOrg config
 exec --no-startup-id xset r rate 300 25
+#exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
+#exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape

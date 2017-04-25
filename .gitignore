@@ -11,3 +11,8 @@
 !wallpapers/*
 !nitrogen
 !nitrogen/*
+!vim
+!vim/*
+!XOrg
+!XOrg/*
+!create_links.sh
