@@ -16,3 +16,10 @@
 !XOrg
 !XOrg/*
 !create_links.sh
+
+!mpd
+!mpd/*
+!ncmpcpp
+!ncmpcpp/*
+
+*~
