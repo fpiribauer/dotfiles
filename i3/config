@@ -204,7 +204,7 @@ exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc
 exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -layout us -option caps:escape
-exec --no-startup-id disable-standyb-fs
+exec --no-startup-id disable-standby-fs
 exec --no-startup-id emacs --daemon
 
 #XOrg config
