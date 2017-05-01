@@ -1,0 +1,72 @@
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+
+(add-to-list 'package-archives
+             '("marmalade" . "https://marmalade-repo.org/packages/")
+             t)
+
+(package-initialize)
+
+(package-refresh-contents)
+
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+;; Personal info
+(setq user-mail-address "Freggar@gmail.com"
+      user-full-name    "Freggar None")
+
+(setq vc-follow-symlinks t)
+(setq inhibit-startup-message t)
+(setq make-backup-files nil)
+
+(setq-default fringes-outside-margins t)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq indent-line-function 'insert-tab)
+
+(set-frame-font "Source Code Pro for Powerline")
+(set-face-attribute 'default nil :height 100)
+
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+(show-paren-mode 1)
+(column-number-mode 1)
+
+(set-default 'cursor-type 'box)
+
+(global-hl-line-mode 0)
+(global-visual-line-mode 0)
+
+(setq evil-want-C-u-scroll t)
+;;EVIL-MODE
+(require 'evil)
+(evil-mode 1)
+
+(require 'linum)
+(global-linum-mode 1)
+
+(defvar my-linum-format-string "%3d ")
+(add-hook 'linum-before-numbering-hook 'my-linum-get-format-string)
+
+(defun my-linum-get-format-string ()
+  (let* ((width (1+ (length (number-to-string
+                             (count-lines (point-min) (point-max))))))
+         (format (concat "%" (number-to-string width) "d ")))
+    (setq my-linum-format-string format)))
+
+(defvar my-linum-current-line-number 0)
+
+(setq linum-format 'my-linum-relative-line-numbers)
+
+(defun my-linum-relative-line-numbers (line-number)
+  (let ((offset (abs (- line-number my-linum-current-line-number))))
+    (propertize (format my-linum-format-string offset) 'face 'linum)))
+
+(defadvice linum-update (around my-linum-update)
+  (let ((my-linum-current-line-number (line-number-at-pos)))
+    ad-do-it))
+(ad-activate 'linum-update)
+

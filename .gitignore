@@ -22,4 +22,7 @@
 !ncmpcpp
 !ncmpcpp/*
 
+!emacs
+!emacs/*
+
 *~
