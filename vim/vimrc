@@ -133,6 +133,12 @@ if has('langmap') && exists('+langremap')
   " compatible).
   set nolangremap
 endif
+
+"Make dirs for backups, so they are there for sure
+silent !mkdir -p ~/.vim/backup
+silent !mkdir -p ~/.vim/undo
+silent !mkdir -p ~/.vim/swp
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
@@ -183,6 +189,9 @@ endif
 execute pathogen#infect()
 "autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode() 
 
-set number
+set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set number
+
+" Change highlight color to something readable
+hi Search cterm=NONE ctermfg=white ctermbg=black
