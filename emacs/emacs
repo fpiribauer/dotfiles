@@ -77,3 +77,19 @@
 ;; (require 'twittering-mode)
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
+
+;; Latex export
+(require 'ox-latex)
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
+
+;; Org DONE setup
+(setq org-log-done 'note)
+;; Org-Tags! 
+(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("workflow" . ?w) ("freetime" . ?f)))
+
+
