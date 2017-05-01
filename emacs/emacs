@@ -1,3 +1,6 @@
+;; Emacs configuration
+
+;; Package management
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
@@ -70,3 +73,5 @@
     ad-do-it))
 (ad-activate 'linum-update)
 
+;; Twitter Mode! yay
+;; (require 'twittering-mode)
