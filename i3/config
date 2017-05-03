@@ -188,6 +188,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -layout us -option caps:escape
 exec --no-startup-id disable-standby-fs
 exec --no-startup-id emacs --daemon
+exec --no-startup-id mopidy
 
 #XOrg config
 exec --no-startup-id xset r rate 300 25
