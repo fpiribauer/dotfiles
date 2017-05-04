@@ -91,5 +91,17 @@
 (setq org-log-done 'note)
 ;; Org-Tags! 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("workflow" . ?w) ("freetime" . ?f)))
-
-
+;; Default  browser for exporting and stuff!
+(eval-after-load "org"
+  '(progn
+     ;; .txt files aren't in the list initially, but in case that changes
+     ;; in a future version of org, use if to avoid errors
+     (if (assoc "\\.txt\\'" org-file-apps)
+         (setcdr (assoc "\\.txt\\'" org-file-apps) "notepad.exe %s")
+       (add-to-list 'org-file-apps '("\\.txt\\'" . "notepad.exe %s") t))
+     ;; Change .pdf association directly within the alist
+     (setcdr (assoc "\\.pdf\\'" org-file-apps) "evince %s")
+     (setcdr (assoc "\\.x?html?\\'" org-file-apps) "firefox %s"))) 
+;; Fancy bullet points!
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
