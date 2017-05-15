@@ -199,6 +199,9 @@ autocmd InsertLeave * :set number
 " Change highlight color to something readable
 hi Search cterm=NONE ctermfg=white ctermbg=black
 
+" Syntastic highlightning colors
+" hi SpellBad ctermfg=160 ctermbg=254 guifg=#268bd2 guibg=#cb4b16
+" hi SpellCap ctermfg=125 ctermbg=037 guifg=#6c71c4 guibg=#002b36
 " OmniSharp settings
 
 " OmniSharp won't work without this setting
@@ -318,3 +321,5 @@ set hidden
 
 " Enable snippet completion, requires completeopt-=preview
 let g:OmniSharp_want_snippet=1
+
+
