@@ -146,6 +146,7 @@
 (setq org-agenda-files (list org-gtd-file))
 ;; org-archive all done tasks
 (defun org-archive-done-tasks ()
+  "Archive all taks that either have the tag DONE or CANCELLED"
   (interactive)
   (message "Start archiving tasks")
   (org-map-entries
