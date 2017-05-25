@@ -147,11 +147,13 @@
 ;; org-archive all done tasks
 (defun org-archive-done-tasks ()
   (interactive)
+  (message "Start archiving tasks")
   (org-map-entries
    (lambda ()
      (org-archive-subtree)
      (setq org-map-continue-from (outline-previous-heading)))
-   "/CANCELLED|DONE" 'agenda))
+   "/CANCELLED|DONE" 'agenda)
+  (message "Finished archiving task"))
 ;; org-todo archive todos after call!
 (defun org-todo-archive ()
  "Change todo state and archive done TASKS after that"
@@ -159,5 +161,7 @@
  (org-todo)
  (org-archive-done-tasks))
  
-(with-eval-after-load 'org
-  (define-key org-mode-map (kbd "C-c C-t") 'org-todo-archive))
+;; (with-eval-after-load 'org
+;;   (define-key org-mode-map (kbd "C-c C-t") 'org-todo-archive))
+
+(add-hook 'org-ctrl-c-ctrl-c-final-hook 'org-archive-done-tasks)
