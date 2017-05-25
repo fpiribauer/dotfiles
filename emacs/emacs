@@ -137,3 +137,21 @@
 
 ;; org-capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
+(setq org-agenda-files (list org-gtd-file))
+;; org-archive all done tasks
+(defun org-archive-done-tasks ()
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/CANCELLED|DONE" 'agenda))
+;; org-todo archive todos after call!
+(defun org-todo-archive ()
+ "Change todo state and archive done TASKS after that"
+ (interactive)
+ (org-todo)
+ (org-archive-done-tasks))
+ 
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c C-t") 'org-todo-archive))
