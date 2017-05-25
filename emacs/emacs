@@ -114,11 +114,17 @@
   "Open the GTD file."
   (interactive)
   (find-file org-gtd-file))
+(defun notes ()
+  "Open the note file."
+  (interactive)
+  (find-file org-default-notes-file))
+
 
 ;; ORG Mode Keybindings
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cg" 'gtd)
+(global-set-key "\C-cn" 'notes)
 
 ;; ORG TODO-Keywords
 (setq org-todo-keywords
