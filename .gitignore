@@ -25,4 +25,6 @@
 !emacs
 !emacs/*
 
+!zsh
+!zsh/*
 *~
