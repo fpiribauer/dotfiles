@@ -107,5 +107,5 @@ export JSON_INCLUDE_PATH=/home/piri/nvs5/json/src
 alias bnet="setarch i386 -3 wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Blizzard\ App/Battle.net\ Launcher.exe"
 alias toff="synclient TouchpadOff=1"
 alias ton="synclient TouchpadOff=0"
-
-fortune | ponysay  -f owl
+alias "frt"="fortune | ponysay -f owl"
+frt
