@@ -3,3 +3,4 @@
 #exec bspwm
 #exec xterm
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&
+exec i3
