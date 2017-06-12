@@ -1,5 +1,5 @@
 #!/bin/sh
 export PRIMARY_DISPLAY="eDP-1"
-export SECONDARY_DISPLAY="HDMI"
+export SECONDARY_DISPLAY="HDMI-1"
 exec i3
 exec start-pulseaudio-x11

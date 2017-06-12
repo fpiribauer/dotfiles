@@ -11,6 +11,7 @@
 !wallpapers/*
 !nitrogen
 !nitrogen/*
+nitrogen/*saved*
 !vim
 !vim/*
 !XOrg
