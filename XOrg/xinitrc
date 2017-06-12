@@ -1,6 +1,4 @@
 #!/bin/sh
-#sxhkd &
-#exec bspwm
-#exec xterm
-#exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&
-exec i3
+export PRIMARY_DISPLAY="eDP-1"
+export SECONDARY_DISPLAY="HDMI"
+i3
