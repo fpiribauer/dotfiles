@@ -3,6 +3,9 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export TERM=xterm-256color
 
+#Android SDK path when installing from AUR
+export ANDROID_HOME=/opt/android-sdk
+
 #CUSTOM POWERLINE COLOLRS
 export POWERLINE_SEC1_BG=%K{red}
 
