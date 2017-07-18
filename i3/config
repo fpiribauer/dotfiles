@@ -208,6 +208,7 @@ exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -layout us -option caps:escape
 #exec --no-startup-id disable-standby-fs
+exec --no-startup-id caffeine
 exec --no-startup-id emacs --daemon
 exec --no-startup-id mopidy
 
