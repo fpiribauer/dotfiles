@@ -110,6 +110,11 @@
 (defvar org-directory "~/org")
 ;; GTD file
 (defvar org-gtd-file "~/org/ag/gtd.org")
+;; File contains all indefinetley postoned stuff
+(defvar org-hold-file "~/org/hold.org")
+;; DONE File
+(defvar org-done-file "~/org/done.org")
+
 (defun gtd ()
   "Open the GTD file."
   (interactive)
@@ -144,6 +149,13 @@
 ;; org-capture
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-agenda-files (list org-gtd-file))
+;; Let the stuff from notes.org be refiled
+(setq org-refile-targets
+      '((org-default-notes-file :maxlevel . 3)
+        (org-gtd-file :maxlevel . 3)
+        (org-done-file :maxlevel . 3)
+        (org-hold-file :maxlevel . 3)))
+
 ;; org-archive all done tasks
 (defun org-archive-done-tasks ()
   "Archive all tasks that either have the tag DONE or CANCELLED"
@@ -166,3 +178,15 @@
 ;;   (define-key org-mode-map (kbd "C-c C-t") 'org-todo-archive))
 
 (add-hook 'org-ctrl-c-ctrl-c-final-hook 'org-archive-done-tasks)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (org-mobile-sync use-package org-bullets evil))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
