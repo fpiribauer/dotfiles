@@ -1,24 +1,7 @@
 # FreeAgent puts the powerline style in zsh !
 
-if [ "$POWERLINE_DATE_FORMAT" = "" ]; then
-  POWERLINE_DATE_FORMAT=%D{%Y-%m-%d}
-fi
 
-if [ "$POWERLINE_RIGHT_B" = "" ]; then
-  POWERLINE_RIGHT_B=%D{%H:%M:%S}
-elif [ "$POWERLINE_RIGHT_B" = "none" ]; then
-  POWERLINE_RIGHT_B=""
-fi
 
-if [ "$POWERLINE_RIGHT_A" = "mixed" ]; then
-  POWERLINE_RIGHT_A=%(?."$POWERLINE_DATE_FORMAT".%F{red}✘ %?)
-elif [ "$POWERLINE_RIGHT_A" = "exit-status" ]; then
-  POWERLINE_RIGHT_A=%(?.%F{green}✔ %?.%F{red}✘ %?)
-elif [ "$POWERLINE_RIGHT_A" = "exit-status-on-fail" ]; then
-  POWERLINE_RIGHT_A=%(?..%F{red}✘ %?)
-elif [ "$POWERLINE_RIGHT_A" = "date" ]; then
-  POWERLINE_RIGHT_A="$POWERLINE_DATE_FORMAT"
-fi
 
 if [ "$POWERLINE_SHORT_HOST_NAME" = "" ]; then
     POWERLINE_HOST_NAME="%M"
@@ -122,10 +105,6 @@ fi
 
 POWERLINE_GIT_BRANCH_COLOR=magenta
 
-# if [ "$(git_prompt_info)" = "" ]; then
-   # POWERLINE_GIT_INFO_LEFT=""
-   # POWERLINE_GIT_INFO_RIGHT=""
-# else
     if [ "$POWERLINE_SHOW_GIT_ON_RIGHT" = "" ]; then
 
         if [ "$POWERLINE_HIDE_GIT_PROMPT_STATUS" = "" ]; then
@@ -142,24 +121,6 @@ POWERLINE_GIT_BRANCH_COLOR=magenta
             POWERLINE_GIT_INFO_RIGHT="%F{white}"$'\ue0b2'"%F{black}%K{white}"$'$(git_prompt_info)'" %K{white}"
         fi
     fi
-# fi
-
-if [ "$POWERLINE_DETECT_SSH" != "" ]; then
-  if [ -n "$SSH_CLIENT" ]; then
-    POWERLINE_SEC1_BG=%K{red}
-    POWERLINE_SEC1_FG=%F{red}
-    POWERLINE_SEC1_TXT=%F{white}
-  fi
-fi
-
-if [ "$VIRTUAL_ENV" != "" ] && [ "$POWERLINE_HIDE_VIRTUAL_ENV" = "" ]; then
-    VENV_NAME=$(basename "$VIRTUAL_ENV")
-    VENV_STATUS="($POWERLINE_SEC1_TXT$VENV_NAME)"
-else
-    VENV_STATUS=""
-fi
-
-#PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $POWERLINE_USER_NAME $VENV_STATUS%k%f$POWERLINE_SEC1_FG$POWERLINE_SEC2_BG"$'\ue0b0'"%k%f%F{white}$POWERLINE_SEC2_BG #"$POWERLINE_PATH"$POWERLINE_SEC2_FG"$POWERLINE_GIT_INFO_LEFT" %k"$'\ue0b0'"%f "
 
 PROMPT="$POWERLINE_SEC1_BG$POWERLINE_SEC1_TXT $VENV_STATUS%k%f$POWERLINE_SEC1_FG$POWERLINE_SEC2_BG"$'\ue0b0'"%k%f%F{white}$POWERLINE_SEC2_BG "$POWERLINE_PATH"$POWERLINE_SEC2_FG"$POWERLINE_GIT_INFO_LEFT" %k"$'\ue0b0'"%f "
 
@@ -168,12 +129,3 @@ if [ "$POWERLINE_NO_BLANK_LINE" = "" ]; then
 "$PROMPT
 fi
 
-if [ "$POWERLINE_DISABLE_RPROMPT" = "" ]; then
-    if [ "$POWERLINE_RIGHT_A" = "" ]; then
-        RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{black}%K{white} $POWERLINE_RIGHT_B %f%k"
-    elif [ "$POWERLINE_RIGHT_B" = "" ]; then
-        RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{$POWERLINE_RIGHT_A_COLOR_FRONT}%K{$POWERLINE_RIGHT_A_COLOR_BACK} $POWERLINE_RIGHT_A %f%k"
-    else
-        RPROMPT="$POWERLINE_GIT_INFO_RIGHT%F{white}"$'\ue0b2'"%k%F{black}%K{white} $POWERLINE_RIGHT_B %f%F{$POWERLINE_RIGHT_A_COLOR_BACK}"$'\ue0b2'"%f%k%K{$POWERLINE_RIGHT_A_COLOR_BACK}%F{$POWERLINE_RIGHT_A_COLOR_FRONT} $POWERLINE_RIGHT_A %f%k"
-    fi
-fi
