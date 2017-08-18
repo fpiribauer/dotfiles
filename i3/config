@@ -206,8 +206,8 @@ exec --no-startup-id $XDG_CONFIG_HOME/polybar/run_polybar.sh
 exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc 
 exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id fcitx
 exec --no-startup-id setxkbmap -layout us -option caps:escape -option compose:ralt
-#exec --no-startup-id disable-standby-fs
 exec --no-startup-id caffeine
 exec --no-startup-id emacs --daemon
 #exec --no-startup-id mopidy
