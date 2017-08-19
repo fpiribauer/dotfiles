@@ -5,4 +5,6 @@ if [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
 fi
 if [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 2 ]; then
   exec nvidia-xrun
+else
+  setterm -cursor on
 fi
