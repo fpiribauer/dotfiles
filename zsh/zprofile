@@ -1,3 +1,9 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export XDG_CONFIG_HOME="$HOME/.config"
+
+export TERM=rxvt-256color
+
 export EDIOR=vim
 
 if [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
