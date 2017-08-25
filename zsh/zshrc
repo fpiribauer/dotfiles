@@ -5,6 +5,7 @@ export ANDROID_HOME=/opt/android-sdk
 autoload -U compaudit compinit
 source $XDG_CONFIG_HOME/zsh/completion.zsh
 source $XDG_CONFIG_HOME/zsh/theme-and-appearance.zsh
+source $XDG_CONFIG_HOME/zsh/grep.zsh
 compinit -i -d "${ZSH_COMPDUMP}"
 
 #Custom Prompt with powerline-go
