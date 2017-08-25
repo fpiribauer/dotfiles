@@ -1,8 +1,15 @@
 #Android SDK path when installing from AUR
 export ANDROID_HOME=/opt/android-sdk
 
+#Tab Completion and File/Directory appearance
+autoload -U compaudit compinit
+source $XDG_CONFIG_HOME/zsh/completion.zsh
+source $XDG_CONFIG_HOME/zsh/theme-and-appearance.zsh
+compinit -i -d "${ZSH_COMPDUMP}"
+
+#Custom Prompt with powerline-go
 function powerline_precmd() {
-    PS1="$(/usr/bin/powerline-go -error $? -shell zsh -modules 'cwd,git')"
+    PS1="$(/usr/bin/powerline-go -error $? -shell zsh -modules cwd,git)"
 }
 
 function install_powerline_precmd() {
