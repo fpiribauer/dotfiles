@@ -74,6 +74,7 @@ modules-center = i3
 modules-right =
 
 override-redirect = true
+wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
