@@ -38,7 +38,7 @@ new_window pixel 0
 new_float normal 1
 
 # start a terminal
-bindsym $win+Return exec --no-startup-id urxvt
+bindsym $win+Return exec --no-startup-id termite
 bindsym $win+e exec --no-startup-id emacsclient -c
 
 
