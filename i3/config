@@ -216,3 +216,6 @@ exec --no-startup-id emacs --daemon
 exec --no-startup-id xset r rate 300 25
 #exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
 #exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+exec --no-startup-id xsetwacom set 11 area 0 3565 3680 5635
+exec --no-startup-id xsetwacom set 11 rotate half
+exec --no-startup-id xsetwacom set 11 MapToOutput "eDP1"
