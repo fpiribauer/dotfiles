@@ -33,11 +33,6 @@ bindkey -v
 export XAUTHORITY=/home/piri/.Xauthority
 export DISPLAY=:0.0
 
-export ASIO_INCLUDE_PATH=/home/piri/nvs5/asio/asio/include
-export SPDLOG_INCLUDE_PATH=/home/piri/nvs5/spdlog/include
-export FMT_PATH=/home/piri/nvs5/fmt
-export JSON_INCLUDE_PATH=/home/piri/nvs5/json/src
-
 alias bnet="setarch i386 -3 wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Blizzard\ App/Battle.net\ Launcher.exe"
 alias toff="synclient TouchpadOff=1"
 alias ton="synclient TouchpadOff=0"
