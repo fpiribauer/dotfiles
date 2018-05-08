@@ -2,8 +2,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export TERM=termite-256color
-
 export EDITOR=vim
 
 if [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
