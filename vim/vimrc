@@ -33,11 +33,6 @@ silent! while 0
   set nocompatible
 silent! endwhile
 
-" Delete SPACE bindings before setting it as leader
-nnoremap <SPACE> <Nop>
-" Set leader key
-let mapleader=" "
-
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
@@ -210,5 +205,28 @@ Plugin 'oblitum/YouCompleteMe'
 call vundle#end()
 filetype plugin indent on
 
-" Add leader keybindings
+" YouCompleteMe specific config
+
+" Let warnings/errors be inserted in vim's location list
+let g:ycm_always_populate_location_list = 1
+
+" Leader Keybindings
+"
+" Delete SPACE bindings before setting it as leader
+nnoremap <SPACE> <Nop>
+" Set leader key
+let mapleader=" "
+
+nnoremap <leader>cc :make clean<CR><CR><CR>
+nnoremap <leader>cm :make<CR><CR><CR>
+nnoremap <leader>cr :make run<CR>
+nnoremap <leader>cf :make full<CR>
+
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" Gruvbox Colorscheme
+set background=dark
+colorscheme gruvbox 
+" Set Background to terminal background
+" Careful this has to be after colorscheme 
+hi Normal guibg=NONE ctermbg=NONE
