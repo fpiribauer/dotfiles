@@ -33,8 +33,10 @@ silent! while 0
   set nocompatible
 silent! endwhile
 
+" Delete SPACE bindings before setting it as leader
+nnoremap <SPACE> <Nop>
 " Set leader key
-let mapleader = ","
+let mapleader=" "
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
@@ -189,13 +191,24 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-execute pathogen#infect()
-Helptags
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode() 
-
 set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set number
 
 " Change highlight color to something readable
 hi Search cterm=NONE ctermfg=white ctermbg=black
+
+"Load plugins via Vundle
+set nocompatible
+filetype off
+
+"Load plugins using Vundle
+set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/vundle.vim'
+Plugin 'oblitum/YouCompleteMe'
+call vundle#end()
+filetype plugin indent on
+
+" Add leader keybindings
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
