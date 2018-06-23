@@ -186,18 +186,19 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+" Use relative line numbers
 set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set number
 
-" Change highlight color to something readable
-hi Search cterm=NONE ctermfg=white ctermbg=black
+" 80 character width line
+set colorcolumn=80
 
-"Load plugins via Vundle
+" Load plugins via Vundle
 set nocompatible
 filetype off
 
-"Load plugins using Vundle
+" Load plugins using Vundle
 set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/vundle.vim'
@@ -223,6 +224,7 @@ nnoremap <leader>cr :make run<CR>
 nnoremap <leader>cf :make full<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>if :YcmCompleter FixIt<CR>
 
 " Gruvbox Colorscheme
 set background=dark
