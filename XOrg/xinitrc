@@ -6,7 +6,5 @@ export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
-xrandr --output HDMI1 --left-of eDP1
-
 exec i3
 exec start-pulseaudio-x11
