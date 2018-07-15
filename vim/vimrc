@@ -199,11 +199,11 @@ set nocompatible
 filetype off
 
 " Load plugins using Vundle
-set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/vundle.vim'
-Plugin 'oblitum/YouCompleteMe'
-call vundle#end()
+" set rtp+=/usr/share/vim/vimfiles/autoload/vundle.vim
+" call vundle#begin()
+" Plugin 'VundleVim/vundle.vim'
+" Plugin 'oblitum/YouCompleteMe'
+" call vundle#end()
 filetype plugin indent on
 
 " YouCompleteMe specific config
