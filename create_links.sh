@@ -7,3 +7,4 @@ ln -Ts $XDG_CONFIG_HOME/XOrg/Xmodmap ~/.Xmodmap
 ln -Ts $XDG_CONFIG_HOME/emacs/emacs ~/.emacs
 ln -Ts $XDG_CONFIG_HOME/zsh/zshrc ~/.zshrc
 ln -Ts $XDG_CONFIG_HOME/zsh/zprofile ~/.zprofile
+ln -Ts $XDG_CONFIG_HOME/bash/bashrc ~/.bashrc
