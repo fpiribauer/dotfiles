@@ -243,5 +243,7 @@ let g:tex_flavor = "latex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 " Highlight trailing whitespaces red
-highlight RedundantSpaces ctermbg=red guibg=red
-match RedundantSpaces /\s\+$/
+autocmd BufWinEnter <buffer> match Error /\s\+$/
+autocmd InsertEnter <buffer> match Error /\s\+\%#\@<!$/
+autocmd InsertLeave <buffer> match Error /\s\+$/
+autocmd BufWinLeave <buffer> call clearmatches()
