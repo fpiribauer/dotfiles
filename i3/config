@@ -203,7 +203,7 @@ bindsym Print exec scrot
 bindsym $alt+Print exec scrot -u
 
 exec --no-startup-id $XDG_CONFIG_HOME/polybar/run_polybar.sh 
-exec --no-startup-id compton --backend glx --paint-on-overlay --vsync
+exec --no-startup-id picom --backend glx --vsync
 exec --no-startup-id redshift
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id fcitx
