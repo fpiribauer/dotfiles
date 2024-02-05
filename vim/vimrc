@@ -228,9 +228,9 @@ nnoremap <leader>if :YcmCompleter FixIt<CR>
 
 " Gruvbox Colorscheme
 set background=dark
-colorscheme gruvbox 
+colorscheme gruvbox8
 " Set Background to terminal background
-" Careful this has to be after colorscheme 
+" Careful this has to be after colorscheme
 hi Normal guibg=NONE ctermbg=NONE
 
 " Set the following lines in your ~/.vimrc or the systemwide /etc/vimrc:
