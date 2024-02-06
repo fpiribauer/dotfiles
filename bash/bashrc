@@ -16,34 +16,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-pyenvVirtualenvUpdatePrompt() {
-    RED='\[\e[0;31m\]'
-    GREEN='\[\e[38;5;0m\]\[\e[48;5;35m\]'
-    TRIANGLE='\[\e[48;5;240m\]\[\e[38;5;35m\]\[\e[0m\]\[\e[38;5;250m\]\[\e[48;5;240m\]'
-    BLUE='\[\e[0;34m\]'
-    RESET='\[\e[0m\]'
-    [ -z "$PYENV_VIRTUALENV_GLOBAL_NAME" ] && export PYENV_VIRTUALENV_GLOBAL_NAME="$(pyenv global)"
-    VENV_NAME="$(pyenv version-name)"
-    VENV_NAME="${VENV_NAME##*/}"
-    GLOBAL_NAME="$PYENV_VIRTUALENV_GLOBAL_NAME"
-
-    # non-global versions:
-    COLOR="$BLUE"
-    # global version:
-    [ "$VENV_NAME" == "$GLOBAL_NAME" ] && COLOR="$RED"
-    # virtual envs:
-    [ "${VIRTUAL_ENV##*/}" == "$VENV_NAME" ] && COLOR="$GREEN"
-
-    if [ -z "$COLOR" ]; then
-	PS1="${PS1}"
-    else
-        PS1="${GREEN} ${VENV_NAME} ${TRIANGLE}${PS1}"
-    fi
-    export PS1
-}
-#export PROMPT_COMMAND="$PROMPT_COMMAND; pyenvVirtualenvUpdatePrompt;"
-
 alias vg="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose"
 alias my_mpirun="mpirun --mca btl_tcp_if_include 127.0.0.1/24"
 
