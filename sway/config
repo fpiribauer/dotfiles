@@ -4,6 +4,24 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+### Juicy base16 colors
+set $base00 #{{TEMPLATE_BASE16_00}}
+set $base01 #{{TEMPLATE_BASE16_01}}
+set $base02 #{{TEMPLATE_BASE16_02}}
+set $base03 #{{TEMPLATE_BASE16_03}}
+set $base04 #{{TEMPLATE_BASE16_04}}
+set $base05 #{{TEMPLATE_BASE16_05}}
+set $base06 #{{TEMPLATE_BASE16_06}}
+set $base07 #{{TEMPLATE_BASE16_07}}
+set $base08 #{{TEMPLATE_BASE16_08}}
+set $base09 #{{TEMPLATE_BASE16_09}}
+set $base0A #{{TEMPLATE_BASE16_0A}}
+set $base0B #{{TEMPLATE_BASE16_0B}}
+set $base0C #{{TEMPLATE_BASE16_0C}}
+set $base0D #{{TEMPLATE_BASE16_0D}}
+set $base0E #{{TEMPLATE_BASE16_0E}}
+set $base0F #{{TEMPLATE_BASE16_0F}}
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
