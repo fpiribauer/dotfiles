@@ -5,22 +5,22 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Juicy base16 colors
-set $base00 #{{TEMPLATE_BASE16_00}}
-set $base01 #{{TEMPLATE_BASE16_01}}
-set $base02 #{{TEMPLATE_BASE16_02}}
-set $base03 #{{TEMPLATE_BASE16_03}}
-set $base04 #{{TEMPLATE_BASE16_04}}
-set $base05 #{{TEMPLATE_BASE16_05}}
-set $base06 #{{TEMPLATE_BASE16_06}}
-set $base07 #{{TEMPLATE_BASE16_07}}
-set $base08 #{{TEMPLATE_BASE16_08}}
-set $base09 #{{TEMPLATE_BASE16_09}}
-set $base0A #{{TEMPLATE_BASE16_0A}}
-set $base0B #{{TEMPLATE_BASE16_0B}}
-set $base0C #{{TEMPLATE_BASE16_0C}}
-set $base0D #{{TEMPLATE_BASE16_0D}}
-set $base0E #{{TEMPLATE_BASE16_0E}}
-set $base0F #{{TEMPLATE_BASE16_0F}}
+set $base00 #TEMPLATE_BASE16_00
+set $base01 #TEMPLATE_BASE16_01
+set $base02 #TEMPLATE_BASE16_02
+set $base03 #TEMPLATE_BASE16_03
+set $base04 #TEMPLATE_BASE16_04
+set $base05 #TEMPLATE_BASE16_05
+set $base06 #TEMPLATE_BASE16_06
+set $base07 #TEMPLATE_BASE16_07
+set $base08 #TEMPLATE_BASE16_08
+set $base09 #TEMPLATE_BASE16_09
+set $base0A #TEMPLATE_BASE16_0A
+set $base0B #TEMPLATE_BASE16_0B
+set $base0C #TEMPLATE_BASE16_0C
+set $base0D #TEMPLATE_BASE16_0D
+set $base0E #TEMPLATE_BASE16_0E
+set $base0F #TEMPLATE_BASE16_0F
 
 ### Variables
 #
@@ -219,17 +219,24 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+  colors {
+    background $base00
+    separator  $base01
+    statusline $base04
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    #                   Border  BG      Text
+    focused_workspace   $base05 $base0D $base00
+    active_workspace    $base05 $base03 $base00
+    inactive_workspace  $base03 $base01 $base05
+    urgent_workspace    $base08 $base08 $base00
+    binding_mode        $base00 $base0A $base00
+  }
 }
+
+#                       Border  BG      Text    Ind     Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
 
 include /etc/sway/config.d/*
