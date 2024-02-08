@@ -219,6 +219,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+  position top
   colors {
     background $base00
     separator  $base01
@@ -240,3 +241,4 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 
 include /etc/sway/config.d/*
+exec_always systemctl --user start sway-session.target
