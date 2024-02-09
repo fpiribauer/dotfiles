@@ -258,7 +258,7 @@ input type:touchpad {
     natural_scroll enabled
 }
 
-border pixel 2
+default_border pixel 2
 
 include /etc/sway/config.d/*
 exec_always systemctl --user start sway-session.target
