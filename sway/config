@@ -258,6 +258,11 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+input type:keyboard{
+    xkb_layout us,de
+    xkb_options grp:alts_toggle
+}
+
 default_border pixel 2
 
 include /etc/sway/config.d/*
