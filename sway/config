@@ -262,6 +262,7 @@ input type:keyboard {
     xkb_layout us,de
     xkb_options grp:alts_toggle
 }
+seat seat0 hide_cursor 3000
 
 default_border pixel 2
 
