@@ -214,6 +214,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+
+#
+# Custom
+#
+bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+
 #
 # Status Bar:
 #
