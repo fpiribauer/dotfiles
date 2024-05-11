@@ -273,4 +273,6 @@ seat seat0 hide_cursor 3000
 default_border pixel 2
 
 include /etc/sway/config.d/*
+# Start notification daemon
+exec mako
 exec_always systemctl --user start sway-session.target
