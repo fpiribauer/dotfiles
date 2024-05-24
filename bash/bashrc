@@ -11,6 +11,7 @@ fi
 
 alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
+export PATH="$HOME/.nix-profile/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
@@ -34,6 +35,3 @@ alias lock="swaylock \
 	--separator-color 00000000 \
 	--grace 2 \
 	--fade-in 0.2"
-
-source /home/piri/.bash_completions/rllib.sh
-export PATH="$HOME/.nix-profile/bin:$PATH"
