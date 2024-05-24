@@ -275,4 +275,6 @@ default_border pixel 2
 include /etc/sway/config.d/*
 # Start notification daemon
 exec mako
+# Polkit Agent for virt-manager for ex.
+exec /usr/lib/polkit-kde-authentication-agent-1
 exec_always systemctl --user start sway-session.target
