@@ -22,6 +22,7 @@ function git_prompt() {
     branch_name=$(git symbolic-ref -q HEAD)
     branch_name=${branch_name##refs/heads/}
     branch_name=${branch_name:-HEAD}
+    echo -n ":"
 
     if [[ $(git status 2> /dev/null | tail -n1) = *"nothing to commit"* ]]; then
       echo -n "${COLOR_GIT_CLEAN}${branch_name}${COLOR_RESET}"
@@ -34,7 +35,7 @@ function git_prompt() {
 }
 
 function prompt() {
-  PS1="${COLOR_USER}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}:$(git_prompt)\$ "
+  PS1="${COLOR_USER}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}$(git_prompt)\$ "
 }
 PROMPT_COMMAND=prompt
 
