@@ -34,9 +34,8 @@ function git_prompt() {
 }
 
 function prompt() {
-  PS1="${COLOR_USER}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}:$(git_prompt) \$ "
+  PS1="${COLOR_USER}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}: $(git_prompt) \$ "
 }
-export force_color_prompt=yes
 PROMPT_COMMAND=prompt
 
 
