@@ -5,22 +5,22 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Juicy base16 colors
-set $base00 #TEMPLATE_BASE16_00
-set $base01 #TEMPLATE_BASE16_01
-set $base02 #TEMPLATE_BASE16_02
-set $base03 #TEMPLATE_BASE16_03
-set $base04 #TEMPLATE_BASE16_04
-set $base05 #TEMPLATE_BASE16_05
-set $base06 #TEMPLATE_BASE16_06
-set $base07 #TEMPLATE_BASE16_07
-set $base08 #TEMPLATE_BASE16_08
-set $base09 #TEMPLATE_BASE16_09
-set $base0A #TEMPLATE_BASE16_0A
-set $base0B #TEMPLATE_BASE16_0B
-set $base0C #TEMPLATE_BASE16_0C
-set $base0D #TEMPLATE_BASE16_0D
-set $base0E #TEMPLATE_BASE16_0E
-set $base0F #TEMPLATE_BASE16_0F
+set $background    #TEMPLATE_COLOR_background
+set $black         #TEMPLATE_COLOR_black
+set $bright_black  #TEMPLATE_COLOR_bright_black
+set $gray          #TEMPLATE_COLOR_gray
+set $light_gray    #TEMPLATE_COLOR_light_gray
+set $foreground    #TEMPLATE_COLOR_foreground
+set $white         #TEMPLATE_COLOR_white
+set $bright_white  #TEMPLATE_COLOR_bright_white
+set $bright_red    #TEMPLATE_COLOR_bright_red
+set $orange        #TEMPLATE_COLOR_orange
+set $bright_yellow #TEMPLATE_COLOR_bright_yellow
+set $bright_green  #TEMPLATE_COLOR_bright_green
+set $bright_cyan   #TEMPLATE_COLOR_bright_cyan
+set $bright_blue   #TEMPLATE_COLOR_bright_blue
+set $bright_purple #TEMPLATE_COLOR_bright_purple
+set $brown         #TEMPLATE_COLOR_brown
 
 ### Variables
 #
@@ -228,24 +228,24 @@ bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 #   position top
 #   swaybar_command waybar
 #   colors {
-#     background $base00
-#     separator  $base01
-#     statusline $base04
+#     background $background
+#     separator  $black
+#     statusline $light_gray
 #
 #     #                   Border  BG      Text
-#     focused_workspace   $base05 $base0D $base00
-#     active_workspace    $base05 $base03 $base00
-#     inactive_workspace  $base03 $base01 $base05
-#     urgent_workspace    $base08 $base08 $base00
-#     binding_mode        $base00 $base0A $base00
+#     focused_workspace   $foreground $bright_blue $background
+#     active_workspace    $foreground $gray $background
+#     inactive_workspace  $gray $black $foreground
+#     urgent_workspace    $bright_red $bright_red $background
+#     binding_mode        $background $bright_yellow $background
 #   }
 # }
 
-#                       Border  BG      Text    Ind     Child Border
-client.focused          $base05 $base0D $base00 $base0D $base0D
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
+#                       Border      BG           Text        Ind          Child Border
+client.focused          $foreground $bright_blue $background $bright_blue $bright_blue
+client.focused_inactive $black      $black       $foreground $gray        $black
+client.unfocused        $black      $background  $foreground $black       $black
+client.urgent           $bright_red $bright_red  $background $bright_red  $bright_red
 
 workspace 1 output DP-3 DP-6 eDP-1
 workspace 4 output DP-3 DP-6 eDP-1
