@@ -13,6 +13,7 @@ COLOR_USER='TEMPLATE_COLOR_BASH_bright_white'
 COLOR_HOST='TEMPLATE_COLOR_BASH_bright_green'
 COLOR_PWD='TEMPLATE_COLOR_BASH_bright_blue'
 COLOR_GIT_CLEAN='TEMPLATE_COLOR_BASH_bright_green'
+COLOR_GIT_PUSH='TEMPLATE_COLOR_BASH_bright_blue'
 COLOR_GIT_MODIFIED='TEMPLATE_COLOR_BASH_brown'
 COLOR_GIT_STAGED='TEMPLATE_COLOR_BASH_bright_yellow'
 COLOR_RESET='\[\033[0m\]'
@@ -24,7 +25,9 @@ function git_prompt() {
     branch_name=${branch_name:-HEAD}
     echo -n ":"
 
-    if [[ $(git status 2> /dev/null | tail -n1) = *"nothing to commit"* ]]; then
+    if [[ $(git status 2> /dev/null | head -n5) = *'(use "git push"'* ]]; then
+      echo -n "${COLOR_GIT_PUSH}${branch_name}*${COLOR_RESET}"
+    elif [[ $(git status 2> /dev/null | tail -n1) = *"nothing to commit"* ]]; then
       echo -n "${COLOR_GIT_CLEAN}${branch_name}${COLOR_RESET}"
     elif [[ $(git status 2> /dev/null | head -n5) = *"Changes to be committed"* ]]; then
       echo -n "${COLOR_GIT_STAGED}${branch_name}${COLOR_RESET}"
