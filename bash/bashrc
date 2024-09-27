@@ -9,13 +9,13 @@ if [[ -z "${SSH_CONNECTION}" ]]; then
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 fi
 
-COLOR_USER='TEMPLATE_COLOR_BASH_bright_white'
-COLOR_HOST='TEMPLATE_COLOR_BASH_bright_green'
-COLOR_PWD='TEMPLATE_COLOR_BASH_bright_blue'
-COLOR_GIT_CLEAN='TEMPLATE_COLOR_BASH_bright_green'
-COLOR_GIT_PUSH='TEMPLATE_COLOR_BASH_bright_blue'
-COLOR_GIT_MODIFIED='TEMPLATE_COLOR_BASH_brown'
-COLOR_GIT_STAGED='TEMPLATE_COLOR_BASH_bright_yellow'
+COLOR_USER='#{{ color.bash.bright_white }}'
+COLOR_HOST='#{{ color.bash.bright_green }}'
+COLOR_PWD='#{{ color.bash.bright_blue }}'
+COLOR_GIT_CLEAN='#{{ color.bash.bright_green }}'
+COLOR_GIT_PUSH='#{{ color.bash.bright_blue }}'
+COLOR_GIT_MODIFIED='#{{ color.bash.brown }}'
+COLOR_GIT_STAGED='#{{ color.bash.bright_yellow }}'
 COLOR_RESET='\[\033[0m\]'
 
 function git_prompt() {

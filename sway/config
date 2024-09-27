@@ -5,22 +5,22 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Juicy base16 colors
-set $background    #TEMPLATE_COLOR_background
-set $black         #TEMPLATE_COLOR_black
-set $bright_black  #TEMPLATE_COLOR_bright_black
-set $gray          #TEMPLATE_COLOR_gray
-set $light_gray    #TEMPLATE_COLOR_light_gray
-set $foreground    #TEMPLATE_COLOR_foreground
-set $white         #TEMPLATE_COLOR_white
-set $bright_white  #TEMPLATE_COLOR_bright_white
-set $bright_red    #TEMPLATE_COLOR_bright_red
-set $orange        #TEMPLATE_COLOR_orange
-set $bright_yellow #TEMPLATE_COLOR_bright_yellow
-set $bright_green  #TEMPLATE_COLOR_bright_green
-set $bright_cyan   #TEMPLATE_COLOR_bright_cyan
-set $bright_blue   #TEMPLATE_COLOR_bright_blue
-set $bright_purple #TEMPLATE_COLOR_bright_purple
-set $brown         #TEMPLATE_COLOR_brown
+set $background    #{{ color.hex.background }}
+set $black         #{{ color.hex.black }}
+set $bright_black  #{{ color.hex.bright_black }}
+set $gray          #{{ color.hex.gray }}
+set $light_gray    #{{ color.hex.light_gray }}
+set $foreground    #{{ color.hex.foreground }}
+set $white         #{{ color.hex.white }}
+set $bright_white  #{{ color.hex.bright_white }}
+set $bright_red    #{{ color.hex.bright_red }}
+set $orange        #{{ color.hex.orange }}
+set $bright_yellow #{{ color.hex.bright_yellow }}
+set $bright_green  #{{ color.hex.bright_green }}
+set $bright_cyan   #{{ color.hex.bright_cyan }}
+set $bright_blue   #{{ color.hex.bright_blue }}
+set $bright_purple #{{ color.hex.bright_purple }}
+set $brown         #{{ color.hex.brown }}
 
 ### Variables
 #
