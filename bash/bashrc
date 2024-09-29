@@ -40,7 +40,7 @@ function git_prompt() {
 
 function prompt() {
   local nc
-  [[ $(id -u) = 0 ]] && nc="${COLOR_USER}" || nc="${COLOR_ROOT"}"
+  [[ $(id -u) = 0 ]] && nc="${COLOR_USER}" || nc="${COLOR_ROOT}"
   PS1="${nc}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}$(git_prompt)\$ "
 }
 PROMPT_COMMAND=prompt
