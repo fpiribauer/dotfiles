@@ -10,6 +10,7 @@ if [[ -z "${SSH_CONNECTION}" ]]; then
 fi
 
 COLOR_USER='{{ color.bash.bright_white }}'
+COLOR_ROOT='{{ color.bash.bright_red }}'
 COLOR_HOST='{{ color.bash.bright_green }}'
 COLOR_PWD='{{ color.bash.bright_blue }}'
 COLOR_GIT_CLEAN='{{ color.bash.bright_green }}'
@@ -38,7 +39,9 @@ function git_prompt() {
 }
 
 function prompt() {
-  PS1="${COLOR_USER}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}$(git_prompt)\$ "
+  local nc
+  [[ $(id -u) = 0 ]] && nc="${COLOR_USER}" || nc="${COLOR_ROOT"}"
+  PS1="${nc}\u${COLOR_RESET}@${COLOR_HOST}\h${COLOR_RESET}:${COLOR_PWD}\w${COLOR_RESET}$(git_prompt)\$ "
 }
 PROMPT_COMMAND=prompt
 
