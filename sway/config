@@ -24,8 +24,10 @@ set $brown         #{{ color.hex.brown }}
 
 ### Variables
 #
-# Logo key. Use Mod1 for Alt.
+# Use Mod1 for Alt.
 set $mod Mod1
+# Use Mod4 for Super Logo Key.
+set $super  Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -219,6 +221,7 @@ bindsym $mod+r mode "resize"
 # Custom
 #
 bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
+bindsym $super+l exec swaylock
 
 #
 # Status Bar:
