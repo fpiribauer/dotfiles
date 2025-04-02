@@ -75,6 +75,8 @@ alias lock="swaylock \
 	--grace 2 \
 	--fade-in 0.2"
 
+# Git aliases - god help me to remember these
+
 alias g='git'
 
 alias ga='git add'
@@ -250,3 +252,4 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 # custom aliases
 
 alias gs='git status'
+alias av='. ./.venv/bin/activate'
