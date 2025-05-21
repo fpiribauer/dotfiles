@@ -52,10 +52,6 @@ PROMPT_COMMAND=prompt
 alias ls='ls --color=auto'
 export PATH="$HOME/.nix-profile/bin:$PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 alias vg="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose"
 alias my_mpirun="mpirun --mca btl_tcp_if_include 127.0.0.1/24"
 
